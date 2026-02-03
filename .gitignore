@@ -1,0 +1,55 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+yarn.debug.log*
+yarn.error.log*
+npm-debug.log*
+
+# Build output
+dist/
+.parcel-cache/
+
+# OS files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+
+# Design files (please do not remove 🙂)
+*.sketch
+*.fig
+*.xd
+
+# Environment and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+/coverage
+
+# Production
+/build
+/.next
+/out
+
+
+# Misc
+*.log
+*.pem
+.DS_Store
+Thumbs.db
+
+
+notes.md

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="./index.css" type="text/css" rel="stylesheet" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="./script.js"></script>
+
+    <title>Password generator app</title>
+  </head>
+  <body
+    class="flex flex-col gap-3 bg-grey-950 md:items-center md:justify-center md:min-h-screen"
+  >
+    <header class="flex justify-center">
+      <!-- hidden h1 for screen reader users -->
+      <h1
+        class="font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-200 sr-only"
+      >
+        Password Generator app
+      </h1>
+    </header>
+    <main
+      class="flex flex-col gap-4 mt-4 pl-4 pr-4 md:gap-8 md:pl-0 md:pr-0 md:w-135"
+    >
+      <!-- title -->
+      <h1
+        class="flex justify-center font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-600 md:text-2xl md:leading-(--line-height-32)"
+      >
+        Password Generator
+      </h1>
+      <!-- Password and rest container -->
+      <div class="flex flex-col gap-4 md:gap-6">
+        <!-- password container -->
+        <div class="flex justify-between items-center bg-grey-800 p-4">
+          <p
+            class="font-space-jetBrains font-bold text-2xl leading-(--line-height-32) tracking-normal text-grey-700 md:text-[2rem] md:leading-(--line-height-42)"
+          >
+            P4$5W0rD!
+          </p>
+          <div class="flex items-center gap-4">
+            <h3
+              class="uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-green-200"
+            >
+              copied
+            </h3>
+            <img
+              class="copy-img h-5 md:h-6"
+              src="../images/icon-copy.svg"
+              alt="copy-image"
+            />
+          </div>
+        </div>
+        <!-- rest conatiner -->
+        <div
+          class="flex flex-col p-4 bg-grey-800 md:pl-8 md:pr-8 md:pt-6 md:pb-10.25"
+        >
+          <!-- range container -->
+          <div class="flex flex-col">
+            <div class="flex justify-between items-center mt-1.5 mb-1.5">
+              <label
+                for="range-input"
+                class="font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-200 md:text-lg md:leading-(--line-height-24)"
+                >Character Length</label
+              >
+              <p
+                class="font-space-jetBrains font-bold text-2xl leading-(--line-height-32) tracking-normal text-green-200 md:text-[2rem] md:leading-(--line-height-42)"
+              >
+                0
+              </p>
+            </div>
+
+            <input
+              id="range-input"
+              type="range"
+              min="0"
+              max="24"
+              value="12"
+              class="cursor-pointer mt-4.5 md:mt-8.5"
+            />
+          </div>
+          <!-- check list container -->
+          <div class="flex flex-col gap-4 mt-10.5 mb-8">
+            <!-- Include uppercase -->
+            <div class="flex gap-4">
+              <input
+                id="uppercase-checkbox"
+                type="checkbox"
+                value=""
+                class="w-5 h-5 cursor-pointer"
+              />
+              <label
+                for="uppercase-checkbox"
+                class="font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 cursor-pointer md:text-lg md:leading-(--line-height-24)"
+                >Include Uppercase Letters</label
+              >
+            </div>
+            <!-- Include Lower case -->
+            <div class="flex gap-4">
+              <input
+                id="lowercase-checkbox"
+                type="checkbox"
+                value=""
+                class="w-5 h-5 cursor-pointer"
+              />
+              <label
+                for="lowercase-checkbox"
+                class="font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 cursor-pointer md:text-lg md:leading-(--line-height-24)"
+                >Include Lowercase Letters</label
+              >
+            </div>
+
+            <!-- Include Numbers -->
+            <div class="flex gap-4">
+              <input
+                id="numbers-checkbox"
+                type="checkbox"
+                value=""
+                class="w-5 h-5 cursor-pointer"
+              />
+              <label
+                for="numbers-checkbox"
+                class="font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 cursor-pointer md:text-lg md:leading-(--line-height-24)"
+                >Include Numbers</label
+              >
+            </div>
+            <!-- Include symbols -->
+            <div class="flex gap-4">
+              <input
+                id="symbols-checkbox"
+                type="checkbox"
+                value=""
+                class="w-5 h-5 cursor-pointer"
+              />
+              <label
+                for="symbols-checkbox"
+                class="font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 cursor-pointer md:text-lg md:leading-(--line-height-24)"
+                >Include Symbols</label
+              >
+            </div>
+          </div>
+          <!-- Strenght and button container -->
+          <div class="flex flex-col gap-4 md:gap-8">
+            <!-- Strenght container -->
+            <div
+              class="flex justify-between items-center pt-3.5 pb-3.5 pl-4 pr-4 bg-grey-850 md:pt-6 md:pb-6 md:pl-8 md:pr-8"
+            >
+              <h2
+                class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-600 md:text-lg md:leading-(--line-height-24)"
+              >
+                Strength
+              </h2>
+              <div class="flex justify-between items-center gap-3 md:gap-4">
+                <h3
+                  class="uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 text-right md:text-2xl md:leading-(--line-height-32)"
+                >
+                  too weak!
+                </h3>
+                <div class="flex gap-2">
+                  <div
+                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                  ></div>
+                  <div
+                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                  ></div>
+                  <div
+                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                  ></div>
+                  <div
+                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <!-- Button  -->
+            <button
+              data-selected="false"
+              type="button"
+              aria-pressed="false"
+              aria-label="Generate"
+              class="flex justify-center items-center pt-4 pb-4 w-full bg-green-200 cursor-pointer hover:bg-green-300 focus:bg-green-300 active:bg-transparent active:outline-2 active:outline-green-200 group"
+            >
+              <div class="flex items-center gap-4 md:gap-6">
+                <h2
+                  class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-800 group-active:text-green-200 md:text-lg md:leading-(--line-height-24)"
+                >
+                  generate
+                </h2>
+                <ion-icon
+                  class="group-active:text-green-200"
+                  name="arrow-forward-outline"
+                ></ion-icon>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div
+        class="font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-200 text-center pb-8"
+      >
+        Challenge by
+        <a
+          class="text-green-200 focus:text-orange-400 hover:text-orange-400 active:text-red-500"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor.</a
+        >
+        <br />Coded by
+        <a
+          class="text-green-200 focus:text-orange-400 hover:text-orange-400 active:text-red-500"
+          href="https://www.frontendmentor.io/profile/VirginiaPat"
+          target="_blank"
+          >Virginia Patrika.</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

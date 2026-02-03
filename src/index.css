@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --color-grey-950: #08070b;
+  --color-grey-900: #14131b;
+  --color-grey-850: #18171f;
+  --color-grey-800: #24232c;
+  --color-grey-700: #54535b;
+  --color-grey-600: #817d92;
+  --color-grey-200: #e6e5ea;
+  --color-green-200: #a4ffaf;
+  --color-yellow-300: #f8cd65;
+  --color-orange-400: #fb7c58;
+  --color-red-500: #f64a4a;
+
+  --font-space-jetBrains: "JetBrains Mono", sans-serif;
+
+  --line-height-42: 2.625rem;
+  --line-height-32: 2rem;
+  --line-height-24: 1.5rem;
+  --line-height-20: 1.25rem;
+
+  /* custom breakpoin:540px */
+  --breakpoint-md: 33.75rem;
+}
+
+/* Copy image */
+.copy-img:hover,
+.copy-img:focus {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%)
+    hue-rotate(206deg) brightness(107%) contrast(101%);
+}
+
+.copy-img:active {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(61%) saturate(2172%)
+    hue-rotate(158deg) brightness(107%) contrast(98%);
+}
+/* Range slider styling------------------------------>  */
+input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  background: #18171f;
+  outline: none;
+}
+
+/* Thumb -------------------------------  */
+/* Webkit browsers (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: #e6e5ea;
+  cursor: pointer;
+  border: none;
+}
+
+/* Webkit browsers - Active state */
+input[type="range"]:active::-webkit-slider-thumb {
+  background: #18171f;
+  border: 2px solid #a4ffaf;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: #e6e5ea;
+  cursor: pointer;
+  border: none;
+}
+/* Firefox - Active state */
+input[type="range"]:active::-moz-range-thumb {
+  background: #18171f;
+  border: 2px solid #a4ffaf;
+}
+
+/* Track fill effect (filled portion)--------------------------  */
+/* Webkit browsers (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  background: linear-gradient(
+    to right,
+    #a4ffaf 0%,
+    #a4ffaf var(--progress),
+    #18171f var(--progress),
+    #18171f 100%
+  );
+}
+
+/* Track fill effect - Firefox */
+input[type="range"]::-moz-range-track {
+  height: 0.5rem;
+  background: #18171f;
+}
+
+input[type="range"]::-moz-range-progress {
+  height: 0.5rem;
+  background: #a4ffaf;
+}
+
+/* Checkbox styling---------------------------------------------> */
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #e6e5ea;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #a4ffaf;
+  border-color: #a4ffaf;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.875rem;
+  height: 0.875rem;
+  background-image: url("../images/icon-check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
