@@ -47,7 +47,7 @@ input[type="range"] {
 /* Thumb -------------------------------  */
 /* Webkit browsers (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
+  /* appearance: none; */
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
