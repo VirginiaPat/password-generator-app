@@ -1,12 +1,22 @@
 "use strict";
+const elements = {
+  rangeInput: document.getElementById("range-input"),
+};
 
-function updateValue(input) {
-  document.getElementById("value").textContent = input.value;
-  // Calculate progress percentage
-  const progress = ((input.value - input.min) / (input.max - input.min)) * 100;
-  input.style.setProperty("--progress", progress + "%");
+// GRADIENT RANGE INPUT UPDATE---------------------------
+function updateRangeBackground() {
+  const min = elements.rangeInput.min || 0;
+  const max = elements.rangeInput.max || 100;
+  const value = elements.rangeInput.value;
+
+  //Calculate percentage
+  const percentage = ((value - min) / (max - min)) * 100;
+
+  // update background gradient
+  elements.rangeInput.style.background = `linear-gradient(to right, #a4ffaf 0%, #a4ffaf ${percentage}%, #18171f ${percentage}%, #18171f 100%)`;
 }
 
-// Initialize on load
-const rangeInput = document.getElementById("rangeInput");
-updateValue(rangeInput);
+updateRangeBackground();
+
+// Update when value change
+elements.rangeInput.addEventListener("input", updateRangeBackground);
