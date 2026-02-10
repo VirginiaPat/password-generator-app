@@ -31,7 +31,7 @@ const CSS_CLASSES = {
   fullEvalBoxTooWeak: ["border-red-500", "bg-red-500"],
   fullEvalBoxWeak: ["border-orange-400", "bg-orange-400"],
   fullEvalBoxMedium: ["border-yellow-300", "bg-yellow-300"],
-  fullEvalBoxStrong: ["border-green-strong", "bg-green-strong"],
+  fullEvalBoxStrong: ["border-green-300", "bg-green-300"],
 };
 
 const STRENGTH_LABELS = {
@@ -499,9 +499,9 @@ const App = {
       // Initialize UI
       resetUI();
 
-      console.log("✅ Password Generator initialized successfully");
+      console.log("Password Generator initialized successfully");
     } catch (error) {
-      console.error("❌ Failed to initialize app:", error);
+      console.error("Failed to initialize app:", error);
       alert(
         "Failed to initialize the password generator. Please refresh the page.",
       );

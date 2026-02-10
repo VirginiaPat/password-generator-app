@@ -8,7 +8,7 @@
   --color-grey-700: #54535b;
   --color-grey-600: #817d92;
   --color-grey-200: #e6e5ea;
-  --color-green-strong: #a4ffaf;
+  --color-green-300: #a4ffaf;
   --color-yellow-300: #f8cd65;
   --color-orange-400: #fb7c58;
   --color-red-500: #f64a4a;
@@ -27,6 +27,7 @@
   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%)
     hue-rotate(206deg) brightness(107%) contrast(101%);
 }
+
 .copy-img:active {
   filter: brightness(0) saturate(100%) invert(100%) sepia(61%) saturate(2172%)
     hue-rotate(158deg) brightness(107%) contrast(98%);
@@ -106,6 +107,10 @@ input[type="checkbox"] {
   background-color: transparent;
 }
 
+input[type="checkbox"]:focus {
+  @apply outline-none border-green-300 border-4;
+}
+
 input[type="checkbox"]:checked {
   background-color: #a4ffaf;
   border-color: #a4ffaf;
@@ -123,13 +128,4 @@ input[type="checkbox"]:checked::after {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-/* Password strength evaluation boxes */
-.bg-green-strong {
-  background-color: var(--color-green-strong);
-}
-
-.border-green-strong {
-  border-color: var(--color-green-strong);
 }
