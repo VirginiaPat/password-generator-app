@@ -8,7 +8,7 @@
   --color-grey-700: #54535b;
   --color-grey-600: #817d92;
   --color-grey-200: #e6e5ea;
-  --color-green-200: #a4ffaf;
+  --color-green-strong: #a4ffaf;
   --color-yellow-300: #f8cd65;
   --color-orange-400: #fb7c58;
   --color-red-500: #f64a4a;
@@ -123,4 +123,13 @@ input[type="checkbox"]:checked::after {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* Password strength evaluation boxes */
+.bg-green-strong {
+  background-color: var(--color-green-strong);
+}
+
+.border-green-strong {
+  border-color: var(--color-green-strong);
 }

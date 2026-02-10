@@ -53,19 +53,28 @@
       <!-- Password and rest container -->
       <div class="flex flex-col gap-4 md:gap-6">
         <!-- password container -->
-        <div class="flex justify-between items-center bg-grey-800 p-4">
+        <div
+          class="flex justify-between items-center bg-grey-800 p-4 h-16 md:h-20"
+        >
           <p
+            id="password-number"
             class="font-space-jetBrains font-bold text-2xl leading-(--line-height-32) tracking-normal text-grey-700 md:text-[2rem] md:leading-(--line-height-42)"
+          ></p>
+          <p
+            id="select-option-error"
+            class="hidden font-space-jetBrains font-bold text-lg leading-(--line-height-20) tracking-normal text-red-500"
           >
-            P4$5W0rD!
+            Select at least one option
           </p>
           <div class="flex items-center gap-4">
             <h3
-              class="uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-green-200"
+              id="copied"
+              class="hidden uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-green-strong"
             >
               copied
             </h3>
             <img
+              id="copy-image"
               class="copy-img h-5 md:h-6"
               src="../images/icon-copy.svg"
               alt="copy-image"
@@ -80,23 +89,27 @@
           <div class="flex flex-col">
             <div class="flex justify-between items-center mt-1.5 mb-6 md:mb-10">
               <label
-                for="range-input"
+                for="length-input"
                 class="font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-200 md:text-lg md:leading-(--line-height-24)"
                 >Character Length</label
               >
-              <p
-                class="font-space-jetBrains font-bold text-2xl leading-(--line-height-32) tracking-normal text-green-200 md:text-[2rem] md:leading-(--line-height-42)"
+              <output
+                id="length-output"
+                class="font-space-jetBrains font-bold text-2xl leading-(--line-height-32) tracking-normal text-green-strong md:text-[2rem] md:leading-(--line-height-42)"
               >
                 0
-              </p>
+              </output>
             </div>
 
             <input
-              id="range-input"
+              id="length-input"
               type="range"
+              name="length-input"
               min="0"
-              max="24"
+              max="16"
               value="0"
+              step="1"
+              aria-required="true"
               class="cursor-pointer"
             />
           </div>
@@ -108,7 +121,7 @@
                 id="uppercase-checkbox"
                 type="checkbox"
                 value=""
-                class="w-5 h-5 cursor-pointer"
+                class="checkbox w-5 h-5 cursor-pointer"
               />
               <label
                 for="uppercase-checkbox"
@@ -122,7 +135,7 @@
                 id="lowercase-checkbox"
                 type="checkbox"
                 value=""
-                class="w-5 h-5 cursor-pointer"
+                class="checkbox w-5 h-5 cursor-pointer"
               />
               <label
                 for="lowercase-checkbox"
@@ -137,7 +150,7 @@
                 id="numbers-checkbox"
                 type="checkbox"
                 value=""
-                class="w-5 h-5 cursor-pointer"
+                class="checkbox w-5 h-5 cursor-pointer"
               />
               <label
                 for="numbers-checkbox"
@@ -151,7 +164,7 @@
                 id="symbols-checkbox"
                 type="checkbox"
                 value=""
-                class="w-5 h-5 cursor-pointer"
+                class="checkbox w-5 h-5 cursor-pointer"
               />
               <label
                 for="symbols-checkbox"
@@ -164,7 +177,7 @@
           <div class="flex flex-col gap-4 md:gap-8">
             <!-- Strenght container -->
             <div
-              class="flex justify-between items-center pt-3.5 pb-3.5 pl-4 pr-4 bg-grey-850 md:pt-6 md:pb-6 md:pl-8 md:pr-8"
+              class="flex justify-between items-center pt-3.5 pb-3.5 pl-4 pr-4 bg-grey-850 h-14 md:pt-6 md:pb-6 md:pl-8 md:pr-8 md:h-18"
             >
               <h2
                 class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-600 md:text-lg md:leading-(--line-height-24)"
@@ -173,42 +186,46 @@
               </h2>
               <div class="flex justify-between items-center gap-3 md:gap-4">
                 <h3
+                  id="strength-evaluation"
                   class="uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 text-right md:text-2xl md:leading-(--line-height-32)"
-                >
-                  too weak!
-                </h3>
+                ></h3>
                 <div class="flex gap-2">
                   <div
-                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                    id="evaluation-box-1"
+                    class="evaluation-box h-7 w-2.5 border-2 border-grey-200 bg-grey-850"
                   ></div>
                   <div
-                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                    id="evaluation-box-2"
+                    class="evaluation-box h-7 w-2.5 border-2 border-grey-200 bg-grey-850"
                   ></div>
                   <div
-                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                    id="evaluation-box-3"
+                    class="evaluation-box h-7 w-2.5 border-2 border-grey-200 bg-grey-850"
                   ></div>
                   <div
-                    class="h-7 w-2.5 border-2 border-grey-200 bg-transparent"
+                    id="evaluation-box-4"
+                    class="evaluation-box h-7 w-2.5 border-2 border-grey-200 bg-grey-850"
                   ></div>
                 </div>
               </div>
             </div>
             <!-- Button  -->
             <button
+              id="generate-button"
               data-selected="false"
               type="button"
               aria-pressed="false"
               aria-label="Generate"
-              class="flex justify-center items-center pt-4 pb-4 w-full bg-green-200 cursor-pointer hover:bg-green-300 focus:bg-green-300 active:bg-transparent active:outline-2 active:outline-green-200 group"
+              class="flex justify-center items-center pt-4 pb-4 w-full bg-green-strong cursor-pointer hover:bg-green-300 focus:bg-green-300 active:bg-transparent active:outline-2 active:outline-green-strong group"
             >
               <div class="flex items-center gap-4 md:gap-6">
                 <h2
-                  class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-800 group-active:text-green-200 md:text-lg md:leading-(--line-height-24)"
+                  class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-800 group-active:text-green-strong md:text-lg md:leading-(--line-height-24)"
                 >
                   generate
                 </h2>
                 <ion-icon
-                  class="group-active:text-green-200"
+                  class="group-active:text-green-strong"
                   name="arrow-forward-outline"
                 ></ion-icon>
               </div>
@@ -219,18 +236,18 @@
     </main>
     <footer>
       <div
-        class="font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-200 text-center pb-8"
+        class="font-space-jetBrains font-bold text-xs leading-(--line-height-20) tracking-normal text-grey-200 text-center pb-8"
       >
         Challenge by
         <a
-          class="text-green-200 focus:text-orange-400 hover:text-orange-400 active:text-red-500"
+          class="text-green-strong focus:text-orange-400 hover:text-orange-400 active:text-red-500"
           href="https://www.frontendmentor.io?ref=challenge"
           target="_blank"
           >Frontend Mentor.</a
         >
         <br />Coded by
         <a
-          class="text-green-200 focus:text-orange-400 hover:text-orange-400 active:text-red-500"
+          class="text-green-strong focus:text-orange-400 hover:text-orange-400 active:text-red-500"
           href="https://www.frontendmentor.io/profile/VirginiaPat"
           target="_blank"
           >Virginia Patrika.</a
