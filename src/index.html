@@ -45,11 +45,11 @@
       class="flex flex-col gap-4 mt-4 pl-4 pr-4 md:gap-8 md:pl-0 md:pr-0 md:w-135"
     >
       <!-- title -->
-      <h1
+      <h2
         class="flex justify-center font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-600 md:text-2xl md:leading-(--line-height-32)"
       >
         Password Generator
-      </h1>
+      </h2>
       <!-- Password and rest container -->
       <div class="flex flex-col gap-4 md:gap-6">
         <!-- password container -->
@@ -67,18 +67,21 @@
             Select at least one option
           </p>
           <div class="flex items-center gap-4">
-            <h3
+            <div
               id="copied"
+              role="status"
+              aria-live="polite"
               class="hidden uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-green-300"
             >
               copied
-            </h3>
-            <img
+            </div>
+            <button
               id="copy-image"
               class="copy-img h-5 md:h-6"
-              src="../images/icon-copy.svg"
-              alt="copy-image"
-            />
+              aria-label="Copy to clipboard"
+            >
+              <img src="../images/icon-copy.svg" alt="" />
+            </button>
           </div>
         </div>
         <!-- rest conatiner -->
@@ -185,10 +188,10 @@
                 Strength
               </h2>
               <div class="flex justify-between items-center gap-3 md:gap-4">
-                <h3
+                <p
                   id="strength-evaluation"
                   class="uppercase font-space-jetBrains font-bold text-lg leading-(--line-height-24) tracking-normal text-grey-200 text-right md:text-2xl md:leading-(--line-height-32)"
-                ></h3>
+                ></p>
                 <div class="flex gap-2">
                   <div
                     id="evaluation-box-1"
@@ -218,7 +221,7 @@
               aria-label="Generate"
               class="flex justify-center items-center pt-4 pb-4 w-full bg-green-300 cursor-pointer hover:bg-transparent hover:outline-2 hover:outline-green-300 focus:bg-transparent focus:outline-2 focus:outline-green-300 active:bg-green-300 group"
             >
-              <div class="flex items-center gap-4 md:gap-6">
+              <span class="flex items-center gap-4 md:gap-6">
                 <h2
                   class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-800 group-hover:text-green-300 group-focus:text-green-300 group-active:text-grey-800 md:text-lg md:leading-(--line-height-24)"
                 >
@@ -228,7 +231,7 @@
                   class="group-hover:text-green-300 group-focus:text-green-300 group-active:text-grey-800"
                   name="arrow-forward-outline"
                 ></ion-icon>
-              </div>
+              </span>
             </button>
           </div>
         </div>
