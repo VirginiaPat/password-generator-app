@@ -58,6 +58,9 @@
         >
           <p
             id="password-number"
+            role="region"
+            aria-live="polite"
+            aria-atomic="true"
             class="font-space-jetBrains font-bold text-2xl leading-(--line-height-32) tracking-normal text-grey-700 md:text-[2rem] md:leading-(--line-height-42)"
           ></p>
           <p
@@ -77,8 +80,10 @@
             </div>
             <button
               id="copy-image"
-              class="copy-img h-5 md:h-6"
               aria-label="Copy to clipboard"
+              tabindex="0"
+              type="button"
+              class="copy-img h-5 md:h-6"
             >
               <img src="../images/icon-copy.svg" alt="" />
             </button>
@@ -182,11 +187,11 @@
             <div
               class="flex justify-between items-center pt-3.5 pb-3.5 pl-4 pr-4 bg-grey-850 h-14 md:pt-6 md:pb-6 md:pl-8 md:pr-8 md:h-18"
             >
-              <h2
+              <h3
                 class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-600 md:text-lg md:leading-(--line-height-24)"
               >
                 Strength
-              </h2>
+              </h3>
               <div class="flex justify-between items-center gap-3 md:gap-4">
                 <p
                   id="strength-evaluation"
@@ -222,12 +227,14 @@
               class="flex justify-center items-center pt-4 pb-4 w-full bg-green-300 cursor-pointer hover:bg-transparent hover:outline-2 hover:outline-green-300 focus:bg-transparent focus:outline-2 focus:outline-green-300 active:bg-green-300 group"
             >
               <span class="flex items-center gap-4 md:gap-6">
-                <h2
+                <span
                   class="uppercase font-space-jetBrains font-bold text-base leading-(--line-height-20) tracking-normal text-grey-800 group-hover:text-green-300 group-focus:text-green-300 group-active:text-grey-800 md:text-lg md:leading-(--line-height-24)"
                 >
                   generate
-                </h2>
+                </span>
                 <ion-icon
+                  role="img"
+                  aria-hidden="true"
                   class="group-hover:text-green-300 group-focus:text-green-300 group-active:text-grey-800"
                   name="arrow-forward-outline"
                 ></ion-icon>

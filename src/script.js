@@ -472,11 +472,6 @@ const setupEventListeners = () => {
   // Copy functionality
   elements.copyImage.addEventListener("click", handleCopyClick);
   elements.copyImage.addEventListener("keydown", handleKeyboardCopy);
-
-  // Make copy image focusable for keyboard navigation
-  elements.copyImage.setAttribute("tabindex", "0");
-  elements.copyImage.setAttribute("role", "button");
-  elements.copyImage.setAttribute("aria-label", "Copy password to clipboard");
 };
 
 // ============================================
