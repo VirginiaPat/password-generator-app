@@ -379,9 +379,6 @@ const generatePassword = () => {
     // Display password
     hideError();
     elements.passwordNum.textContent = password;
-
-    // Update ARIA attributes
-    elements.generateButton.setAttribute("aria-pressed", "true");
   } catch (error) {
     console.error("Error generating password:", error);
     showError();
